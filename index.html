@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammad Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/Mohammed.jpg" alt="Richard hanrick" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Richard hanrick">Mohammad Marediya</h1>
+
+          <p class="title">Java Developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:Mohammedmmarediya@gmail.com" class="contact-link">Mohammedmmarediya@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="" class="contact-link">9624986226</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23">December 01, 2004</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>palanpur,gujrat,India</address>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+
+              <a href="https://www.linkedin.com/in/mohammad-marediya-8840a0284" class="contact-link" target="_blank">
+                Mohammad Marediya
+              </a>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm a Java Developer with a strong foundation in designing, developing, and maintaining
+            scalable software applications. Proficient in Core Java, J2EE, Spring Boot, Hibernate, and related
+            technologies. Skilled in building RESTful APIs, implementing database interactions using JPA/Hibernate, and
+            securing applications with Spring Security. Strong problem-solving abilities, with hands-on experience
+            through personal and academic projects.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I'm Doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/Backend.jpeg" alt="Backend Development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Backend Development</h4>
+
+                <p class="service-item-text">
+                  Designing and developing scalable Java-based backend systems using Spring Boot and J2EE architecture.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/Api.jpeg" alt="Rest Api icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">RESTful API Development</h4>
+                <p class="service-item-text">
+                  Building secure and efficient REST APIs integrated with Hibernate/JPA and relational databases.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/Security.jpeg" alt="security icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Security</h4>
+                <p class="service-item-text">
+                  Implementing authentication and authorization using Spring Security and JWT tokens and oauth2.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/db.jpeg" alt="db icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Database Management</h4>
+                <p class="service-item-text">
+                  Managing and optimizing database interactions with JPA and Hibernate for high performance.
+                </p>
+              </div>
+
+            </li>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/redis.jpeg" alt="Redis icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Redis Integration</h4>
+                <p class="service-item-text">
+                  Implementing Redis for high-performance caching, session storage, and real-time data processing in
+                  modern web applications.
+                </p>
+              </div>
+
+            </li>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/unit testing.jpeg" alt="Unit testing icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Unit Testing</h4>
+                <p class="service-item-text">
+                  Writing comprehensive unit tests using JUnit and Mockito to ensure code reliability, maintainability,
+                  and early bug detection.
+                </p>
+              </div>
+
+            </li>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/versionControl.jpeg" alt="Version control icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Version Control</h4>
+                <p class="service-item-text">
+                  Efficient code management using Git and GitHub, enabling collaboration, version tracking, and seamless
+                  code integration.
+                </p>
+              </div>
+
+            </li>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/UI.jpeg" alt="Frontend development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Frontend Development</h4>
+                <p class="service-item-text">
+                  Building responsive user interfaces using HTML, CSS, and basic JavaScript to create interactive and
+                  accessible web experiences.
+                </p>
+              </div>
+
+            </li>
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <!-- Resume -->
+
+      <article class="resume" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+          <div class="resume-viewer">
+
+            <a href="assets/PDF/MohammadMarediyaResume.pdf" target="_blank" rel="noopener noreferrer" class="view-btn">
+              <ion-icon name="eye-outline"></ion-icon>
+              View Resume
+            </a>
+
+            <a href="assets/PDF/MohammadMarediyaResume.pdf" class="download-btn" download="MohammadMarediyaResume.pdf">
+              <ion-icon name="download-outline"></ion-icon>
+              Download PDF
+            </a>
+          </div>
+        </header>
+      </article>
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn="all">All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn="FrontEnd Projects">FrontEnd Projects</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn="Backend Projects">Backend Projects</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn="FullStack Projects">FullStack Projects</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+            <ul class="select-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn="all">All</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn="FrontEnd Projects">FrontEnd Projects</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn="Backend Projects">Backend Projects</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn="FullStack Projects">FullStack Projects</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+            <li class="project-item" data-filter-item data-category="Backend Projects">
+              <a href="https://github.com/Mohammad07779/movie_app_backend">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/Movie Projects.jpeg" alt="Movie Project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Movie Project</h3>
+              </a>
+            </li>
+
+            <li class="project-item" data-filter-item data-category="Backend Projects">
+              <a href="https://github.com/Mohammad07779/social-media-backend">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/Social Media Project.jpeg" alt="Social Media Project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Social Media Project</h3>
+              </a>
+            </li>
+
+            <li class="project-item" data-filter-item data-category="FullStack Projects">
+              <a href="https://github.com/Mohammad07779/Quiz-Application">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/Quiz project.jpeg" alt="Quiz Project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Quiz Project</h3>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://x.com/MohamadMarediya?t=2sanpFlr3JX7YLspZKew9w&s=09" class="social-link" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.instagram.com/its_mohammad._01?igsh=MWN3b2xqeWdub2ptbg==" class="social-link"
+              target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://wa.me/9624986226" class="social-link" target="_blank">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
