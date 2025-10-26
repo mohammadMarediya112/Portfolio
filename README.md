@@ -38,17 +38,8 @@ This is a static website and requires no server-side compilation or setup.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [YOUR_REPO_URL]
-    ```
-2.  **Navigate to the Directory:**
-    ```bash
-    cd [repo-name]
-    ```
-3.  **View Locally:**
+    git clone https://github.com/mohammadMarediya112/Portfolio.git
+    
+2.  **View Locally:**
     Open the `index.html` file directly in your web browser (`file:///.../index.html`).
 
----
-
-## 📄 License
-
-This project is open-sourced under the MIT License.
