@@ -135,3 +135,57 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// Experience certificate modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const certificateModal = document.getElementById('certificate-modal');
+    const certificateImage = document.getElementById('certificate-image');
+    const modalClose = document.querySelector('.modal-close');
+    
+    // Certificate data - update these with your actual image paths
+    const certificates = {
+        'quba-offer': {
+            image: './assets/images/quba-offer-image.jpg' // Replace with actual image path
+        },
+        'hulkhire-completion': {
+            image: './assets/images/hh-complition.jpeg' // Replace with actual image path
+        }
+    };
+    
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const certificateId = this.getAttribute('data-certificate');
+            const certificate = certificates[certificateId];
+            
+            if (certificate) {
+                certificateImage.src = certificate.image;
+                certificateImage.alt = 'Certificate';
+                certificateModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modal
+    modalClose.addEventListener('click', closeModal);
+    
+    certificateModal.addEventListener('click', function(e) {
+        if (e.target === certificateModal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    function closeModal() {
+        certificateModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});

@@ -167,6 +167,10 @@
           </li>
 
           <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Experience</button>
+          </li>
+
+          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
@@ -183,7 +187,7 @@
       </nav>
 
       <!--
-        - #ABOUT (REFACTORED SECTION START)
+        - #ABOUT SECTION 
       -->
 
       <article class="about active" data-page="about">
@@ -396,9 +400,140 @@
       </article>
 
       <!--
-        - #ABOUT (REFACTORED SECTION END)
+        - #EXPRIENCE SECTION
+      -->
+      <!--
+        - #EXPERIENCE
       -->
 
+      <!--
+  - #EXPERIENCE
+-->
+
+      <article class="experience" data-page="experience">
+
+        <header>
+          <h2 class="h2 article-title">Experience</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Work Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Java Developer - Internship</h4>
+
+              <div class="timeline-item-company">
+                <img src="./assets/images/quba-infotech-logo.jpg" alt="Quba Infotech" class="company-logo">
+                <div class="company-info">
+                  <span class="company-name">Quba Infotech</span>
+                  <span class="employment-type">Internship</span>
+                </div>
+              </div>
+
+              <span class="timeline-period">Aug 2025 - Present · 3 mos</span>
+              <span class="timeline-location">Chapi, Gujarat, India · On-site</span>
+
+              <ul class="timeline-text">
+                <li>Developing and maintaining enterprise applications using Spring Boot and Microservices architecture
+                </li>
+                <li>Implementing RESTful APIs and securing them with Spring Security and JWT</li>
+                <li>Working with MySQL database and optimizing queries for better performance</li>
+                <li>Collaborating with team members using Git version control</li>
+              </ul>
+
+              <div class="experience-skills">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">REST APIs</span>
+              </div>
+
+              <div class="experience-actions">
+                <button class="certificate-btn view-btn" data-certificate="quba-offer">
+                  <ion-icon name="eye-outline"></ion-icon>
+                  View Offer Letter
+                </button>
+                <a href="./assets/PDF/Quba-Infotech-Offer-Letter.pdf" class="certificate-btn download-btn" download>
+                  <ion-icon name="download-outline"></ion-icon>
+                  Download Offer
+                </a>
+              </div>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Java Developer Trainee</h4>
+
+              <div class="timeline-item-company">
+                <img src="./assets/images/hulkhire-logo.jpg" alt="HulkHire" class="company-logo">
+                <div class="company-info">
+                  <span class="company-name">HulkHire</span>
+                  <span class="employment-type">Trainee</span>
+                </div>
+              </div>
+
+              <span class="timeline-period">Jun 2025 - Aug 2025 · 3 mos</span>
+              <span class="timeline-location">Hyderabad, Telangana, India · Remote</span>
+
+              <ul class="timeline-text">
+                <li>Received comprehensive training in Java ecosystem and Spring Framework</li>
+                <li>Developed RESTful web services and implemented authentication systems</li>
+                <li>Gained hands-on experience with database design and optimization</li>
+                <li>Participated in code reviews and agile development methodologies</li>
+              </ul>
+
+              <div class="experience-skills">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Hibernate</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Git</span>
+              </div>
+
+              <div class="experience-actions">
+                <button class="certificate-btn view-btn" data-certificate="hulkhire-completion">
+                  <ion-icon name="eye-outline"></ion-icon>
+                  View Certificate
+                </button>
+                <a href="./assets/PDF/Completion Letter - Trainee - Mohammad marediya - B11661.pdf"
+                  class="certificate-btn download-btn" download>
+                  <ion-icon name="download-outline"></ion-icon>
+                  Download Certificate
+                </a>
+              </div>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <!-- Certificate Modal -->
+      
+        <div class="certificate-modal" id="certificate-modal">
+          <div class="modal-content">
+            <button class="modal-close">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-body">
+              <img src="" alt="Certificate" class="certificate-image" id="certificate-image">
+              <!-- Removed the download button from modal -->
+            </div>
+          </div>
+        </div>
+
+      </article>
       <!-- Resume -->
 
       <article class="resume" data-page="resume">
