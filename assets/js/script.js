@@ -12,6 +12,17 @@ sidebarBtn.addEventListener("click", () => {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+// Set default page to About
+document.addEventListener('DOMContentLoaded', () => {
+  // Remove active class from all links and pages
+  navigationLinks.forEach(navLink => navLink.classList.remove("active"));
+  pages.forEach(page => page.classList.remove("active"));
+  
+  // Add active class to About link and page
+  document.querySelector('[data-nav-link]:first-child').classList.add("active");
+  document.querySelector('[data-page="about"]').classList.add("active");
+});
+
 navigationLinks.forEach(link => {
   link.addEventListener("click", function () {
     // Remove active class from all links and pages
@@ -27,56 +38,100 @@ navigationLinks.forEach(link => {
   });
 });
 
-'use strict';
+// Removed portfolio filtering code
 
-// Portfolio filtering
-const filterBtns = document.querySelectorAll("[data-filter-btn]");
-const filterItems = document.querySelectorAll("[data-filter-item]");
-const selectBox = document.querySelector("[data-select]");
-const selectValue = document.querySelector("[data-select-value]");
-
-// Filter function
-const filterProjects = (filterValue) => {
-  filterItems.forEach(item => {
-    const category = item.dataset.category;
-    const shouldShow = filterValue === "all" || category === filterValue;
-    item.style.display = shouldShow ? "block" : "none";
-  });
+// Add subtle animations to elements on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
-// Filter button click handler
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", function () {
-    // Update active state
-    document.querySelector(".filter-btn.active")?.classList.remove("active");
-    this.classList.add("active");
-
-    // Get filter value and filter
-    const filterValue = this.dataset.filterBtn;
-    filterProjects(filterValue);
-
-    // Update select box text
-    if (this.closest(".select-list")) {
-      selectValue.textContent = this.textContent;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
     }
   });
+}, observerOptions);
+
+// Observe service items for animation
+document.querySelectorAll('.service-item').forEach(item => {
+  item.style.opacity = '0';
+  item.style.transform = 'translateY(20px)';
+  item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(item);
 });
 
-// Select box functionality
-selectBox.addEventListener("click", () => {
-  document.querySelector(".select-list").classList.toggle("active");
-  selectBox.classList.toggle("active");
+// Project details horizontal toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+    
+    viewDetailsButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project');
+            const detailsSection = document.getElementById(`${projectId}-details`);
+            const projectItem = this.closest('.project-item');
+            const icon = this.querySelector('ion-icon');
+            
+            // Check if this project is already active
+            const isActive = this.classList.contains('active');
+            
+            // Close all other project details first
+            viewDetailsButtons.forEach(otherButton => {
+                if (otherButton !== this) {
+                    const otherProject = otherButton.getAttribute('data-project');
+                    const otherDetails = document.getElementById(`${otherProject}-details`);
+                    const otherProjectItem = otherButton.closest('.project-item');
+                    const otherSpan = otherButton.querySelector('span');
+                    
+                    otherButton.classList.remove('active');
+                    otherDetails.classList.remove('active');
+                    otherProjectItem.classList.remove('expanded');
+                    otherSpan.textContent = 'View Details';
+                }
+            });
+            
+            // Toggle current project
+            if (!isActive) {
+                // Open this project
+                this.classList.add('active');
+                detailsSection.classList.add('active');
+                projectItem.classList.add('expanded');
+                const span = this.querySelector('span');
+                span.textContent = 'Hide Details';
+                
+                // Scroll to the project if it's not fully in view
+                projectItem.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest',
+                    inline: 'nearest'
+                });
+            } else {
+                // Close this project
+                this.classList.remove('active');
+                detailsSection.classList.remove('active');
+                projectItem.classList.remove('expanded');
+                const span = this.querySelector('span');
+                span.textContent = 'View Details';
+            }
+        });
+    });
+    
+    // Close project details when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.project-item') && !event.target.closest('.view-details-btn')) {
+            viewDetailsButtons.forEach(button => {
+                const projectId = button.getAttribute('data-project');
+                const detailsSection = document.getElementById(`${projectId}-details`);
+                const projectItem = button.closest('.project-item');
+                const span = button.querySelector('span');
+                
+                button.classList.remove('active');
+                detailsSection.classList.remove('active');
+                projectItem.classList.remove('expanded');
+                span.textContent = 'View Details';
+            });
+        }
+    });
 });
-
-// Close select box when clicking outside
-document.addEventListener("click", (e) => {
-  if (!selectBox.contains(e.target)) {
-    document.querySelector(".select-list").classList.remove("active");
-    selectBox.classList.remove("active");
-  }
-});
-
-// Initialize with "All" filter
-filterProjects("all");
-
-// Rest of your existing JS code for sidebar and navigation...
