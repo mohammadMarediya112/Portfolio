@@ -1,4 +1,3 @@
-
 'use strict';
 
 // Sidebar toggle
@@ -9,7 +8,7 @@ sidebarBtn.addEventListener("click", () => {
   sidebar.classList.toggle("active");
 });
 
-// Page navigation
+// Page navigation - FIXED VERSION
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
@@ -20,26 +19,97 @@ document.addEventListener('DOMContentLoaded', () => {
   pages.forEach(page => page.classList.remove("active"));
   
   // Add active class to About link and page
-  document.querySelector('[data-nav-link]:first-child').classList.add("active");
+  const aboutLink = document.querySelector('[data-nav-link="about"]');
+  if (aboutLink) {
+    aboutLink.classList.add("active");
+  }
   document.querySelector('[data-page="about"]').classList.add("active");
 });
 
+// Navigation click handler
 navigationLinks.forEach(link => {
   link.addEventListener("click", function () {
     // Remove active class from all links and pages
     navigationLinks.forEach(navLink => navLink.classList.remove("active"));
     pages.forEach(page => page.classList.remove("active"));
 
-    // Add active class to clicked link and corresponding page
-    const targetPage = this.textContent.toLowerCase();
+    // Get the target page from data-nav-link attribute
+    const targetPage = this.getAttribute('data-nav-link');
+    
+    // Add active class to clicked link
     this.classList.add("active");
-    document.querySelector(`[data-page="${targetPage}"]`).classList.add("active");
+    
+    // Find and activate the corresponding page
+    const targetPageElement = document.querySelector(`[data-page="${targetPage}"]`);
+    if (targetPageElement) {
+      targetPageElement.classList.add("active");
+    }
 
+    // Scroll to top
     window.scrollTo(0, 0);
   });
 });
 
-// Removed portfolio filtering code
+// Contact form handling
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      // Here you would typically send the data to a server
+      // For now, we'll just show a success message
+      const submitBtn = this.querySelector('.form-submit-btn');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon> Message Sent!';
+      submitBtn.style.background = 'var(--bg-gradient-yellow-1)';
+      submitBtn.style.color = 'var(--smoky-black)';
+      
+      // Reset form
+      this.reset();
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.background = '';
+        submitBtn.style.color = '';
+      }, 3000);
+    });
+  }
+});
+
+// Skills animation on scroll
+const skillsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const skillBars = entry.target.querySelectorAll('.skill-progress-bar');
+      skillBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+// Observe skills section for animation
+document.addEventListener('DOMContentLoaded', function() {
+  const skillsSection = document.querySelector('.skills-content');
+  if (skillsSection) {
+    skillsObserver.observe(skillsSection);
+  }
+});
 
 // Add subtle animations to elements on scroll
 const observerOptions = {
@@ -73,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const projectId = this.getAttribute('data-project');
             const detailsSection = document.getElementById(`${projectId}-details`);
             const projectItem = this.closest('.project-item');
-            const icon = this.querySelector('ion-icon');
             
             // Check if this project is already active
             const isActive = this.classList.contains('active');
@@ -87,9 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const otherSpan = otherButton.querySelector('span');
                     
                     otherButton.classList.remove('active');
-                    otherDetails.classList.remove('active');
-                    otherProjectItem.classList.remove('expanded');
-                    otherSpan.textContent = 'View Details';
+                    if (otherDetails) otherDetails.classList.remove('active');
+                    if (otherProjectItem) otherProjectItem.classList.remove('expanded');
+                    if (otherSpan) otherSpan.textContent = 'View Details';
                 }
             });
             
@@ -97,24 +166,25 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isActive) {
                 // Open this project
                 this.classList.add('active');
-                detailsSection.classList.add('active');
-                projectItem.classList.add('expanded');
+                if (detailsSection) detailsSection.classList.add('active');
+                if (projectItem) projectItem.classList.add('expanded');
                 const span = this.querySelector('span');
-                span.textContent = 'Hide Details';
+                if (span) span.textContent = 'Hide Details';
                 
                 // Scroll to the project if it's not fully in view
-                projectItem.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'nearest',
-                    inline: 'nearest'
-                });
+                if (projectItem) {
+                    projectItem.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest'
+                    });
+                }
             } else {
                 // Close this project
                 this.classList.remove('active');
-                detailsSection.classList.remove('active');
-                projectItem.classList.remove('expanded');
+                if (detailsSection) detailsSection.classList.remove('active');
+                if (projectItem) projectItem.classList.remove('expanded');
                 const span = this.querySelector('span');
-                span.textContent = 'View Details';
+                if (span) span.textContent = 'View Details';
             }
         });
     });
@@ -129,14 +199,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const span = button.querySelector('span');
                 
                 button.classList.remove('active');
-                detailsSection.classList.remove('active');
-                projectItem.classList.remove('expanded');
-                span.textContent = 'View Details';
+                if (detailsSection) detailsSection.classList.remove('active');
+                if (projectItem) projectItem.classList.remove('expanded');
+                if (span) span.textContent = 'View Details';
             });
         }
     });
 });
-
 
 // Experience certificate modal functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -148,10 +217,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Certificate data - update these with your actual image paths
     const certificates = {
         'quba-offer': {
-            image: './assets/images/quba-offer-image.jpg' // Make sure this image exists
+            image: './assets/images/quba-offer-image.jpg'
         },
         'hulkhire-completion': {
-            image: './assets/images/hulkhire-completion-image.jpeg' // Make sure this image exists
+            image: './assets/images/hulkhire-completion-image.jpeg'
+        },
+        'java-backend': {
+            image: './assets/images/java-backend-certificate.jpg'
+        },
+        'spring-fundamentals': {
+            image: './assets/images/spring-certificate.jpg'
         }
     };
     
@@ -189,4 +264,29 @@ document.addEventListener('DOMContentLoaded', function() {
         certificateModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+});
+
+// Fix for email links not working
+document.addEventListener('DOMContentLoaded', function() {
+  // Fix contact method email links
+  const emailLinks = document.querySelectorAll('.method-link[href^="mailto:"]');
+  
+  emailLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const email = this.getAttribute('href').replace('mailto:', '');
+      window.location.href = 'mailto:' + email;
+    });
+  });
+
+  // Fix sidebar email links
+  const sidebarEmailLinks = document.querySelectorAll('.contact-link[href^="mailto:"]');
+  
+  sidebarEmailLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const email = this.getAttribute('href').replace('mailto:', '');
+      window.location.href = 'mailto:' + email;
+    });
+  });
 });

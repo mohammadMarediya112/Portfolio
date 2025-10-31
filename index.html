@@ -71,12 +71,9 @@
               <ion-icon name="mail-outline"></ion-icon>
             </div>
 
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:Mohammedmmarediya@gmail.com" class="contact-link">Mohammedmmarediya@gmail.com</a>
-            </div>
-
+            <a href="mailto:Mohammadmarediya.developer@gmail.com" class="contact-link">
+              Email
+            </a>
           </li>
 
           <li class="contact-item">
@@ -127,10 +124,8 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">LinkedIn</p>
-
               <a href="https://www.linkedin.com/in/mohammad-marediya-8840a0284" class="contact-link" target="_blank">
-                Mohammad Marediya
+                LinkedIn
               </a>
             </div>
 
@@ -143,9 +138,6 @@
       </div>
 
     </aside>
-
-
-
 
 
     <!--
@@ -163,24 +155,33 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link="about">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Experience</button>
+            <button class="navbar-link" data-nav-link="skills">Skills</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link="experience">Experience</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link="education">Education</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link="resume">Resume</button>
           </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="contact">Contact</button>
+          </li>
+
 
         </ul>
 
@@ -400,7 +401,111 @@
       </article>
 
       <!--
-        - #EXPRIENCE SECTION
+        - #SKILLS SECTION
+      -->
+
+      <article class="skills" data-page="skills">
+
+        <header>
+          <h2 class="h2 article-title">Skills</h2>
+        </header>
+
+        <section class="skills-content">
+
+          <!-- Technical Skills -->
+          <div class="skills-category">
+            <h3 class="h3 skills-title">Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="h4 skill-name">Java</h4>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="h4 skill-name">Spring Boot</h4>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="h4 skill-name">Microservices</h4>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="h4 skill-name">REST APIs</h4>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar" style="width: 88%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <h4 class="h4 skill-name">Hibernate/JPA</h4>
+                  <span class="skill-percentage">82%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-bar" style="width: 82%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Technologies -->
+          <div class="skills-category">
+            <h3 class="h3 skills-title">Tools & Technologies</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Apache Kafka</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Redis</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Maven</span>
+              <span class="skill-tag">JUnit</span>
+              <span class="skill-tag">Mockito</span>
+              <span class="skill-tag">Swagger</span>
+              <span class="skill-tag">Postman</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skills-category">
+            <h3 class="h3 skills-title">Soft Skills</h3>
+            <div class="skills-tags soft-skills">
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Team Collaboration</span>
+              <span class="skill-tag">Communication</span>
+              <span class="skill-tag">Agile Methodology</span>
+              <span class="skill-tag">Time Management</span>
+              <span class="skill-tag">Adaptability</span>
+            </div>
+          </div>
+
+        </section>
+
+      </article>
+
+      <!--
+        - #EXPERIENCE SECTION
       -->
 
       <article class="experience" data-page="experience">
@@ -497,6 +602,100 @@
         </div>
 
       </article>
+
+      <!--
+        - #EDUCATION SECTION
+      -->
+
+      <article class="education" data-page="education">
+
+        <header>
+          <h2 class="h2 article-title">Education</h2>
+        </header>
+
+        <section class="education-content">
+
+          <!-- Academic Qualifications -->
+          <div class="education-category">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Academic Qualifications</h3>
+            </div>
+
+            <div class="education-list">
+              <div class="education-item">
+                <div class="education-header">
+                  <h4 class="h4 education-degree">Bachelor of Computer Applications (BCA)</h4>
+                  <span class="education-year">2022 - 2025</span>
+                </div>
+                <div class="education-institution">
+                  <span class="institution-name">Silver Oak University</span>
+                  <span class="education-location">Ahmedabad, Gujarat, India</span>
+                </div>
+                <p class="education-description">
+                  Focused on software development, database management, and computer fundamentals.
+                  Completed projects in Java programming and web technologies.
+                </p>
+              </div>
+
+              <div class="education-item">
+                <div class="education-header">
+                  <h4 class="h4 education-degree">Higher Secondary School (12th Grade)</h4>
+                  <span class="education-year">2020 - 2022</span>
+                </div>
+                <div class="education-institution">
+                  <span class="institution-name">Gujarat Higher Secondary Education Board</span>
+                  <span class="education-location">Gujarat, India</span>
+                </div>
+                <p class="education-description">
+                  Completed with focus on Science and Mathematics streams.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="education-category">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="ribbon-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Certifications</h3>
+            </div>
+
+            <div class="certification-list">
+              <div class="certification-item">
+                <h4 class="h4 certification-title">Java Backend Development</h4>
+                <span class="certification-issuer">HulkHire</span>
+                <span class="certification-date">Issued Jun 2025</span>
+                <div class="certification-actions">
+                  <button class="certificate-btn view-btn" data-certificate="java-backend">
+                    <ion-icon name="eye-outline"></ion-icon>
+                    View Certificate
+                  </button>
+                </div>
+              </div>
+
+              <div class="certification-item">
+                <h4 class="h4 certification-title">Spring Framework Fundamentals</h4>
+                <span class="certification-issuer">Online Course</span>
+                <span class="certification-date">Issued Mar 2024</span>
+                <div class="certification-actions">
+                  <button class="certificate-btn view-btn" data-certificate="spring-fundamentals">
+                    <ion-icon name="eye-outline"></ion-icon>
+                    View Certificate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </article>
+
       <!-- Resume -->
 
       <article class="resume" data-page="resume">
@@ -823,31 +1022,151 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://x.com/MohamadMarediya?t=2sanpFlr3JX7YLspZKew9w&s=09" class="social-link" target="_blank">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
+        <!-- Contact Form -->
+        <section class="contact-form-section">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
 
-          <li class="social-item">
-            <a href="https://www.instagram.com/its_mohammad._01?igsh=MWN3b2xqeWdub2ptbg==" class="social-link"
-              target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
 
-          <li class="social-item">
-            <a href="https://wa.me/9624986226" class="social-link" target="_blank">
-              <ion-icon name="logo-whatsapp"></ion-icon>
-            </a>
-          </li>
-        </ul>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">
+              <ion-icon name="paper-plane-outline"></ion-icon>
+              Send Message
+            </button>
+          </form>
+        </section>
+
+        <!-- Direct Contact Information -->
+        <section class="direct-contact">
+          <h3 class="h3 contact-subtitle">Direct Contact</h3>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="method-icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="method-info">
+                <a href="mailto:Mohammadmarediya.developer@gmail.com" class="method-link">Email</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+              <div class="method-info">
+                <h4 class="h4 method-title">Phone</h4>
+                <a href="tel:9624986226" class="method-link">9624986226</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </div>
+              <div class="method-info">
+                <h4 class="h4 method-title">WhatsApp</h4>
+                <a href="https://wa.me/9624986226" class="method-link" target="_blank">+91 9624986226</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Social Links -->
+        <section class="social-contact">
+          <h3 class="h3 contact-subtitle">Follow Me</h3>
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://x.com/MohamadMarediya?t=2sanpFlr3JX7YLspZKew9w&s=09" class="social-link" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://www.instagram.com/its_mohammad._01?igsh=MWN3b2xqeWdub2ptbg==" class="social-link"
+                target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://wa.me/9624986226" class="social-link" target="_blank">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/mohammad-marediya-8840a0284" class="social-link" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://github.com/mohammadMarediya112" class="social-link" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </section>
 
       </article>
+
     </div>
 
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <p class="copyright">&copy; 2024 Mohammad Marediya. All rights reserved.</p>
+      </div>
+
+      <div class="footer-section">
+        <ul class="footer-links">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.linkedin.com/in/mohammad-marediya-8840a0284" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Mohammad07779" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/MohamadMarediya" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <!--
     - custom js link
