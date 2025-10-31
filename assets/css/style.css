@@ -2354,6 +2354,10 @@ main {
   #EXPERIENCE
 \*-----------------------------------*/
 
+/*-----------------------------------*\
+  #EXPERIENCE
+\*-----------------------------------*/
+
 .experience .article-title {
   margin-bottom: 30px;
 }
@@ -2411,82 +2415,6 @@ main {
 
 .timeline-item {
   position: relative;
-}
-
-/* In your CSS file */
-.experience-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.certificate-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  border: 1px solid var(--jet);
-  border-radius: 8px;
-  font-size: var(--fs-7);
-  font-weight: var(--fw-500);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  text-decoration: none;
-}
-
-.certificate-btn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  background: var(--bg-gradient-jet);
-  border-radius: inherit;
-  z-index: -1;
-  transition: all 0.3s ease;
-}
-
-.certificate-btn:hover {
-  transform: translateY(-2px);
-}
-
-/* View button style */
-.view-btn {
-  background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
-}
-
-.view-btn:hover {
-  color: var(--smoky-black);
-}
-
-.view-btn:hover::before {
-  background: var(--bg-gradient-yellow-1);
-}
-
-/* Download button style */
-.download-btn {
-  background: var(--border-gradient-onyx);
-  color: var(--light-gray);
-}
-
-.download-btn:hover {
-  color: var(--smoky-black);
-}
-
-.download-btn:hover::before {
-  background: var(--bg-gradient-yellow-1);
-}
-
-@media (max-width: 480px) {
-  .experience-actions {
-    flex-direction: column;
-  }
-
-  .certificate-btn {
-    justify-content: center;
-  }
 }
 
 .timeline-item::before {
@@ -2561,53 +2489,11 @@ main {
   margin-bottom: 15px;
 }
 
-.timeline-text {
-  color: var(--light-gray);
-  font-size: var(--fs-7);
-  line-height: 1.6;
-  margin-bottom: 15px;
-  padding-left: 15px;
-}
-
-.timeline-text li {
-  margin-bottom: 8px;
-  position: relative;
-}
-
-.timeline-text li::before {
-  content: "▹";
-  color: var(--orange-yellow-crayola);
-  position: absolute;
-  left: -15px;
-}
-
-.experience-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.skill-tag {
-  background: var(--onyx);
-  color: var(--white-2);
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: var(--fs-8);
-  font-weight: var(--fw-500);
-  border: 1px solid var(--jet);
-  transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-  background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
-  transform: translateY(-2px);
-}
-
+/* Experience Actions - CLEANED (Single Definition) */
 .experience-actions {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .certificate-btn {
@@ -2615,8 +2501,6 @@ main {
   align-items: center;
   gap: 6px;
   padding: 10px 16px;
-  background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
   border: 1px solid var(--jet);
   border-radius: 8px;
   font-size: var(--fs-7);
@@ -2626,6 +2510,7 @@ main {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  text-decoration: none;
 }
 
 .certificate-btn::before {
@@ -2639,22 +2524,47 @@ main {
 }
 
 .certificate-btn:hover {
-  color: var(--smoky-black);
   transform: translateY(-2px);
 }
 
-.certificate-btn:hover::before {
+/* View button style */
+.view-btn {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  border: none;
+}
+
+.view-btn:hover {
+  color: var(--smoky-black);
+}
+
+.view-btn:hover::before {
   background: var(--bg-gradient-yellow-1);
 }
 
-/* Certificate Modal */
+/* Download button style */
+.download-btn {
+  background: var(--border-gradient-onyx);
+  color: var(--light-gray);
+  border: none;
+}
+
+.download-btn:hover {
+  color: var(--smoky-black);
+}
+
+.download-btn:hover::before {
+  background: var(--bg-gradient-yellow-1);
+}
+
+/* Certificate Modal - UPDATED FOR LARGER IMAGES */
 .certificate-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2662,6 +2572,7 @@ main {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  padding: 20px;
 }
 
 .certificate-modal.active {
@@ -2673,10 +2584,14 @@ main {
   background: var(--border-gradient-onyx);
   border-radius: 16px;
   padding: 20px;
-  max-width: 90%;
-  max-height: 90%;
+  width: 95%;
+  height: 95%;
+  max-width: 1200px;
+  max-height: 90vh;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-content::before {
@@ -2694,16 +2609,17 @@ main {
   right: 15px;
   background: var(--jet);
   color: var(--orange-yellow-crayola);
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 2;
+  border: 1px solid var(--orange-yellow-crayola);
 }
 
 .modal-close:hover {
@@ -2713,58 +2629,26 @@ main {
 }
 
 .modal-body {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px 0;
-  text-align: center;
+  overflow: auto;
 }
 
 .certificate-image {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   border-radius: 8px;
-  border: 1px solid var(--jet);
+  border: 2px solid var(--jet);
+  box-shadow: var(--shadow-4);
+  object-fit: contain;
 }
 
-.modal-actions {
-  margin-top: 20px;
-}
-
-.download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 20px;
-  background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
-  border-radius: 8px;
-  font-size: var(--fs-7);
-  font-weight: var(--fw-500);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.download-btn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  background: var(--bg-gradient-jet);
-  border-radius: inherit;
-  z-index: -1;
-  transition: all 0.3s ease;
-}
-
-.download-btn:hover {
-  color: var(--smoky-black);
-  transform: translateY(-2px);
-}
-
-.download-btn:hover::before {
-  background: var(--bg-gradient-yellow-1);
-}
-
-/* Responsive Design for Experience */
+/* Responsive Design */
 @media (max-width: 768px) {
   .timeline::before {
     left: 25px;
@@ -2793,9 +2677,26 @@ main {
     justify-content: center;
   }
 
+  .certificate-modal {
+    padding: 10px;
+  }
+
   .modal-content {
-    max-width: 95%;
+    width: 98%;
+    height: 98%;
     padding: 15px;
+  }
+
+  .modal-body {
+    padding: 10px 0;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
   }
 }
 
@@ -2818,5 +2719,21 @@ main {
     width: 45px;
     height: 45px;
     font-size: 20px;
+  }
+
+  .certificate-modal {
+    padding: 5px;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .certificate-image {
+    border-radius: 4px;
   }
 }

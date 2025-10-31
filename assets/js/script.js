@@ -147,10 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Certificate data - update these with your actual image paths
     const certificates = {
         'quba-offer': {
-            image: './assets/images/quba-offer-image.jpg' // Replace with actual image path
+            image: './assets/images/quba-offer-image.jpg' // Make sure this image exists
         },
         'hulkhire-completion': {
-            image: './assets/images/hh-complition.jpeg' // Replace with actual image path
+            image: './assets/images/hulkhire-completion-image.jpeg' // Make sure this image exists
         }
     };
     
