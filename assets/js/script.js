@@ -63,45 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Skills animation on scroll
-const skillsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const skillBars = entry.target.querySelectorAll('.skill-progress-bar');
-      skillBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 100);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-
-document.addEventListener('DOMContentLoaded', function() {
-  const skillsSection = document.querySelector('.skills-content');
-  if (skillsSection) skillsObserver.observe(skillsSection);
-});
-
-// Scroll animations
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.service-item').forEach(item => {
-  item.style.opacity = '0';
-  item.style.transform = 'translateY(20px)';
-  item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(item);
-});
-
 // Project details toggle
 document.addEventListener('DOMContentLoaded', function() {
   const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
@@ -158,62 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
-
-//  FIXED CERTIFICATE MODAL FUNCTIONALITY
-document.addEventListener('DOMContentLoaded', function() {
-  const certificates = {
-    'quba-offer': { image: './assets/images/Quba-infotech-offer.jpeg' },
-    'hulkhire-completion': { image: './assets/images/hulkhire-completion-image.jpeg' },
-    'java-infosys': { image: './assets/images/java-infosys.png' },
-    'java-hackerRank': { image: './assets/images/java-hackerRank.png' }
-  };
-
-  const certificateModal = document.getElementById('certificate-modal');
-  const certificateImage = document.getElementById('certificate-image');
-  const modalClose = certificateModal.querySelector('.modal-close');
-
-  // Open certificate modal
-  function openCertificateModal(id) {
-    const certificate = certificates[id];
-    if (certificate) {
-      certificateImage.src = certificate.image;
-      certificateModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    } else {
-      console.warn('Certificate not found:', id);
-    }
-  }
-
-  // Close certificate modal
-  function closeCertificateModal() {
-    certificateModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-    certificateImage.src = '';
-  }
-
-  // Attach event listeners
-  document.querySelectorAll('.view-btn[data-certificate]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const id = btn.getAttribute('data-certificate');
-      openCertificateModal(id);
-    });
-  });
-
-  modalClose.addEventListener('click', closeCertificateModal);
-
-  certificateModal.addEventListener('click', e => {
-    if (e.target === certificateModal) closeCertificateModal();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
-      closeCertificateModal();
-    }
-  });
-});
-
 
 // Fix for email links
 document.addEventListener('DOMContentLoaded', function() {
