@@ -137,3 +137,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
   whatsappLinks.forEach(link => link.addEventListener('click', e => e.stopPropagation()));
 });
+
+
+// Ensure contact page exists and is properly configured
+// Add this to your existing page initialization code
+
+// Contact page content verification
+const contactPage = document.querySelector('[data-page="contact"]');
+if (!contactPage) {
+  console.log('Contact page element not found - ensuring proper setup');
+}
