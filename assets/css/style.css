@@ -555,6 +555,7 @@ main {
   }
 }
 
+
 .navbar-link.active {
   position: relative;
   z-index: 3;
@@ -964,7 +965,7 @@ main {
   }
 
   .navbar-list {
-    gap: 20px;
+    gap: 9px;
   }
 
   .navbar-link {
