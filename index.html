@@ -12,6 +12,102 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Service Category Headings ── */
+    .service-category {
+      margin-bottom: 10px;
+      margin-top: 40px;
+    }
+
+    .service-category:first-child {
+      margin-top: 0;
+    }
+
+    .service-category-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid transparent;
+      border-image: var(--text-gradient-yellow) 1;
+      position: relative;
+    }
+
+    .service-category-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--border-gradient-onyx);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--orange-yellow-crayola);
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    .service-category-icon::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+    .service-category-label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .service-category-title {
+      color: var(--orange-yellow-crayola);
+      font-size: var(--fs-3);
+      font-weight: var(--fw-600);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .service-category-subtitle {
+      color: var(--light-gray-70);
+      font-size: var(--fs-8);
+      font-weight: var(--fw-300);
+    }
+
+    /* ── Service badge chips shown inside each card ── */
+    .service-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .service-badge {
+      background: var(--onyx);
+      color: var(--orange-yellow-crayola);
+      border: 1px solid var(--jet);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: var(--fs-8);
+      font-weight: var(--fw-500);
+      transition: all 0.3s ease;
+    }
+
+    .service-item:hover .service-badge {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+    }
+
+    /* icon size inside service cards */
+    .service-icon-box ion-icon {
+      font-size: 28px;
+    }
+  </style>
 </head>
 
 <body>
@@ -39,9 +135,7 @@
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-            <a href="mailto:Mohammadmarediya.developer@gmail.com" class="contact-link">
-              Email
-            </a>
+            <a href="mailto:Mohammadmarediya.developer@gmail.com" class="contact-link">Email</a>
           </li>
           <li class="contact-item">
             <div class="icon-box">
@@ -75,9 +169,8 @@
               <ion-icon name="logo-linkedin"></ion-icon>
             </div>
             <div class="contact-info">
-              <a href="https://www.linkedin.com/in/mohammad-marediya-8840a0284" class="contact-link" target="_blank">
-                LinkedIn
-              </a>
+              <a href="https://www.linkedin.com/in/mohammad-marediya-8840a0284" class="contact-link"
+                target="_blank">LinkedIn</a>
             </div>
           </li>
         </ul>
@@ -87,38 +180,26 @@
 
     <!-- #MAIN CONTENT -->
     <div class="main-content">
-      <!-- # NAVBAR -->
+
+      <!-- #NAVBAR -->
       <nav class="navbar">
         <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link="about">About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="skills">Skills</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="experience">Experience</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="education">Education</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="resume">Resume</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="contact">Contact</button>
-          </li>
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link="about">About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="skills">Skills</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="experience">Experience</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="education">Education</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="resume">Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="portfolio">Portfolio</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="contact">Contact</button></li>
         </ul>
       </nav>
 
-      <!-- # ABOUT ME -->
+      <!-- #ABOUT ME -->
       <article class="about active" data-page="about">
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
+
         <section class="about-text">
           <p>
             I am a dedicated <strong>Backend Engineer</strong> specializing in the <strong>Java ecosystem</strong>, with
@@ -138,156 +219,655 @@
           </p>
         </section>
 
+        <!-- ═══════════════════════════════════════════
+             WHAT I DO — Categorised Service Section
+        ════════════════════════════════════════════ -->
         <section class="service">
           <h3 class="h3 service-title">What I Do</h3>
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="rocket-outline"></ion-icon>
+
+          <!-- ──────────────────────────────────────
+               CATEGORY 1 · Java & Spring Boot Backend
+          ─────────────────────────────────────── -->
+          <div class="service-category">
+            <div class="service-category-header">
+              <div class="service-category-icon">
+                <ion-icon name="cafe-outline"></ion-icon>
               </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Spring Boot Fundamentals</h4>
-                <p class="service-item-text">
-                  Building robust applications using <strong>Spring Boot</strong> with auto-configuration,
-                  <strong>Spring MVC</strong> for web layers, and dependency injection for loosely coupled architecture.
-                </p>
+              <div class="service-category-label">
+                <span class="service-category-title">Java &amp; Spring Boot Backend</span>
+                <span class="service-category-subtitle">Core backend engineering with the Java ecosystem</span>
               </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="layers-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">REST API Development</h4>
-                <p class="service-item-text">
-                  Designing and developing <strong>RESTful APIs</strong> with proper HTTP methods,
-                  status codes, request/response handling, and <strong>Spring Web</strong> annotations.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="server-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Persistence & ORM</h4>
-                <p class="service-item-text">
-                  Implementing <strong>Spring Data JPA</strong> with <strong>Hibernate</strong> for database operations,
-                  entity relationships, transactions, and repository patterns for efficient data access.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="cog-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Business Logic & Validation</h4>
-                <p class="service-item-text">
-                  Developing service layers with business logic, implementing <strong>validation</strong> using
-                  Bean Validation API, and handling exceptions with <strong>Spring Exception Handling</strong>.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="shield-checkmark-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Security & Authentication</h4>
-                <p class="service-item-text">
-                  Securing applications with <strong>Spring Security</strong>, implementing <strong>JWT</strong>
-                  authentication, authorization, role-based access control, and OAuth2 integration.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="git-network-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Microservices Architecture</h4>
-                <p class="service-item-text">
-                  Building distributed systems with <strong>Spring Cloud</strong>, implementing
-                  <strong>API Gateways</strong>, service discovery with Eureka, and configuration management.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="flash-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Event-Driven Systems</h4>
-                <p class="service-item-text">
-                  Implementing asynchronous communication using <strong>Apache Kafka</strong> and RabbitMQ
-                  for event-driven architecture, message queues, and real-time data processing.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="speedometer-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Performance & Caching</h4>
-                <p class="service-item-text">
-                  Optimizing application performance with <strong>Redis</strong> caching,
-                  <strong>Spring Cache</strong> abstraction, database optimization, and connection pooling.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="checkmark-done-outline"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Testing & Quality Assurance</h4>
-                <p class="service-item-text">
-                  Writing comprehensive tests with <strong>JUnit 5</strong>, <strong>Mockito</strong> for mocking,
-                  integration tests, and practicing TDD for reliable, maintainable code.
-                </p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
+            </div>
+
+            <ul class="service-list">
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Spring Boot Fundamentals</h4>
+                  <p class="service-item-text">
+                    Building production-grade applications using <strong>Spring Boot</strong> with auto-configuration,
+                    embedded server setup, and profiles for environment management. Applying <strong>Spring MVC</strong>
+                    for structured web layers and <strong>Dependency Injection</strong> for loosely coupled,
+                    testable components.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Spring Boot</span>
+                    <span class="service-badge">Spring MVC</span>
+                    <span class="service-badge">DI / IoC</span>
+                    <span class="service-badge">Auto-Configuration</span>
+                    <span class="service-badge">Profiles</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="layers-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">REST API Development</h4>
+                  <p class="service-item-text">
+                    Designing clean, versioned <strong>RESTful APIs</strong> following best practices — correct
+                    HTTP verbs, status codes, pagination, filtering, and HATEOAS where needed. Using
+                    <strong>Spring Web</strong> annotations (@RestController, @RequestMapping, @PathVariable)
+                    with consistent request/response models and DTOs.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">REST</span>
+                    <span class="service-badge">Spring Web</span>
+                    <span class="service-badge">DTO Pattern</span>
+                    <span class="service-badge">Pagination</span>
+                    <span class="service-badge">API Versioning</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="server-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Data Persistence &amp; ORM</h4>
+                  <p class="service-item-text">
+                    Implementing full data access layers with <strong>Spring Data JPA</strong> and
+                    <strong>Hibernate</strong> — defining entities, mapping one-to-one / one-to-many /
+                    many-to-many relationships, writing JPQL / native queries, and managing transactions.
+                    Using the Repository pattern for clean separation of concerns.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Spring Data JPA</span>
+                    <span class="service-badge">Hibernate</span>
+                    <span class="service-badge">JPQL</span>
+                    <span class="service-badge">Transactions</span>
+                    <span class="service-badge">MySQL</span>
+                    <span class="service-badge">PostgreSQL</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="cog-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Business Logic &amp; Validation</h4>
+                  <p class="service-item-text">
+                    Structuring applications in clean layered architecture (Controller → Service → Repository).
+                    Implementing input validation with <strong>Bean Validation API</strong> (@Valid, @NotNull,
+                    custom constraints) and centralised exception handling via
+                    <strong>@ControllerAdvice</strong> with meaningful error responses.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Bean Validation</span>
+                    <span class="service-badge">@ControllerAdvice</span>
+                    <span class="service-badge">Custom Exceptions</span>
+                    <span class="service-badge">Layered Architecture</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Security &amp; Authentication</h4>
+                  <p class="service-item-text">
+                    Securing APIs with <strong>Spring Security</strong> — configuring filter chains, implementing
+                    stateless <strong>JWT</strong> authentication (access + refresh tokens), role-based and
+                    permission-based access control, and integrating <strong>OAuth2 / OpenID Connect</strong>
+                    for social login flows.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Spring Security</span>
+                    <span class="service-badge">JWT</span>
+                    <span class="service-badge">OAuth2</span>
+                    <span class="service-badge">RBAC</span>
+                    <span class="service-badge">BCrypt</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="git-network-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Microservices Architecture</h4>
+                  <p class="service-item-text">
+                    Decomposing monoliths into independent, deployable services using <strong>Spring Cloud</strong>.
+                    Implementing <strong>API Gateway</strong> (Spring Cloud Gateway) for routing and rate-limiting,
+                    <strong>Eureka</strong> for service discovery, <strong>Config Server</strong> for centralised
+                    configuration, and <strong>Feign Client</strong> for inter-service communication.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Spring Cloud</span>
+                    <span class="service-badge">API Gateway</span>
+                    <span class="service-badge">Eureka</span>
+                    <span class="service-badge">Feign Client</span>
+                    <span class="service-badge">Config Server</span>
+                    <span class="service-badge">Circuit Breaker</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="flash-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Event-Driven Systems</h4>
+                  <p class="service-item-text">
+                    Building asynchronous, decoupled systems using <strong>Apache Kafka</strong> — producing and
+                    consuming events, configuring topics/partitions/consumer groups, and ensuring at-least-once
+                    delivery. Also working with <strong>RabbitMQ</strong> for task queues and
+                    <strong>ActiveMQ</strong> for JMS-based messaging.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Apache Kafka</span>
+                    <span class="service-badge">RabbitMQ</span>
+                    <span class="service-badge">ActiveMQ</span>
+                    <span class="service-badge">Event Sourcing</span>
+                    <span class="service-badge">Dead Letter Queue</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="speedometer-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Performance &amp; Caching</h4>
+                  <p class="service-item-text">
+                    Optimising throughput with <strong>Redis</strong> for distributed caching (cache-aside,
+                    write-through), using <strong>Spring Cache</strong> abstraction (@Cacheable, @CacheEvict),
+                    tuning database connection pools (HikariCP), writing optimised queries, and identifying
+                    N+1 problems with query analysis.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Redis</span>
+                    <span class="service-badge">Spring Cache</span>
+                    <span class="service-badge">HikariCP</span>
+                    <span class="service-badge">Query Optimisation</span>
+                    <span class="service-badge">N+1 Fix</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="checkmark-done-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Testing &amp; Quality Assurance</h4>
+                  <p class="service-item-text">
+                    Writing multi-layer tests — unit tests with <strong>JUnit 5</strong> and
+                    <strong>Mockito</strong> (mocking dependencies, verifying interactions), integration tests
+                    with <strong>@SpringBootTest</strong> and TestContainers for real DB assertions, and
+                    practicing <strong>TDD</strong> for critical business logic paths.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">JUnit 5</span>
+                    <span class="service-badge">Mockito</span>
+                    <span class="service-badge">TestContainers</span>
+                    <span class="service-badge">TDD</span>
+                    <span class="service-badge">Integration Tests</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="document-text-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">API Documentation</h4>
+                  <p class="service-item-text">
+                    Generating interactive, always-up-to-date API docs using <strong>Swagger / OpenAPI 3</strong>
+                    — annotating controllers with @Operation, @ApiResponse, and schema definitions. Maintaining
+                    API contracts and sharing Postman collections for team and consumer reference.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Swagger UI</span>
+                    <span class="service-badge">OpenAPI 3</span>
+                    <span class="service-badge">Postman</span>
+                    <span class="service-badge">API Contracts</span>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <!-- end category 1 -->
+
+
+          <!-- ──────────────────────────────────────
+               CATEGORY 2 · Deployment & DevOps
+          ─────────────────────────────────────── -->
+          <div class="service-category">
+            <div class="service-category-header">
+              <div class="service-category-icon">
                 <ion-icon name="cloud-upload-outline"></ion-icon>
               </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Deployment & DevOps</h4>
-                <p class="service-item-text">
-                  Containerizing applications with <strong>Docker</strong>, managing versions with <strong>Git</strong>,
-                  and deploying to cloud platforms with CI/CD pipelines for continuous delivery.
-                </p>
+              <div class="service-category-label">
+                <span class="service-category-title">Deployment &amp; DevOps</span>
+                <span class="service-category-subtitle">Containers, cloud, automation &amp; infrastructure</span>
               </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="bar-chart-outline"></ion-icon>
+            </div>
+
+            <ul class="service-list">
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="cube-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Docker &amp; Containerisation</h4>
+                  <p class="service-item-text">
+                    Containerising <strong>Spring Boot</strong> applications with <strong>Docker</strong> —
+                    writing optimised multi-stage Dockerfiles, reducing image size, managing environment
+                    variables securely, and orchestrating multi-service local environments with
+                    <strong>Docker Compose</strong>. Publishing versioned images to Docker Hub and AWS ECR.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Docker</span>
+                    <span class="service-badge">Dockerfile</span>
+                    <span class="service-badge">Docker Compose</span>
+                    <span class="service-badge">Docker Hub</span>
+                    <span class="service-badge">ECR</span>
+                    <span class="service-badge">Multi-stage Build</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="git-branch-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Kubernetes (K8s) Orchestration</h4>
+                  <p class="service-item-text">
+                    Deploying and operating containerised workloads on <strong>Kubernetes</strong> — writing
+                    manifests for Pods, Deployments, StatefulSets, Services, and Ingress. Managing configuration
+                    and secrets with ConfigMaps &amp; Secrets, implementing rolling updates and auto-scaling
+                    (HPA). Packaging applications with <strong>Helm</strong> charts for repeatable deployments.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Kubernetes</span>
+                    <span class="service-badge">kubectl</span>
+                    <span class="service-badge">Helm</span>
+                    <span class="service-badge">HPA</span>
+                    <span class="service-badge">Ingress</span>
+                    <span class="service-badge">ConfigMaps</span>
+                    <span class="service-badge">Rolling Updates</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="cloud-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">AWS Cloud Deployment</h4>
+                  <p class="service-item-text">
+                    Deploying backend services on <strong>Amazon Web Services</strong> — launching compute on
+                    <strong>EC2</strong> and container workloads on <strong>ECS / EKS</strong>, managing
+                    relational databases with <strong>RDS</strong>, storing assets on <strong>S3</strong>,
+                    and exposing APIs via <strong>API Gateway</strong>. Configuring <strong>IAM</strong> roles,
+                    VPCs, security groups, Application Load Balancers, and Auto Scaling Groups for
+                    production-grade, highly available infrastructure.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">EC2</span>
+                    <span class="service-badge">ECS / EKS</span>
+                    <span class="service-badge">RDS</span>
+                    <span class="service-badge">S3</span>
+                    <span class="service-badge">API Gateway</span>
+                    <span class="service-badge">IAM</span>
+                    <span class="service-badge">VPC</span>
+                    <span class="service-badge">ALB</span>
+                    <span class="service-badge">Auto Scaling</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="sync-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">CI/CD Pipelines</h4>
+                  <p class="service-item-text">
+                    Automating the full software delivery lifecycle with <strong>GitHub Actions</strong> —
+                    building workflows for lint, test, Docker build, and push on every PR. Setting up
+                    <strong>Jenkins</strong> pipelines (Declarative &amp; Scripted) with stages for build,
+                    unit test, integration test, Docker image creation, and zero-downtime deployments to
+                    staging and production environments.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">GitHub Actions</span>
+                    <span class="service-badge">Jenkins</span>
+                    <span class="service-badge">Pipeline as Code</span>
+                    <span class="service-badge">Automated Testing</span>
+                    <span class="service-badge">Zero-downtime Deploy</span>
+                    <span class="service-badge">Webhooks</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="construct-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Infrastructure as Code — Terraform</h4>
+                  <p class="service-item-text">
+                    Provisioning and managing cloud infrastructure declaratively with <strong>Terraform</strong>
+                    — writing reusable modules for AWS resources (VPC, EC2, RDS, S3, EKS), managing remote
+                    state in S3 with DynamoDB locking, and enforcing consistent, version-controlled environments
+                    across dev, staging, and production. Using <strong>terraform plan / apply</strong> inside
+                    CI/CD for infrastructure drift detection.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Terraform</span>
+                    <span class="service-badge">HCL</span>
+                    <span class="service-badge">Modules</span>
+                    <span class="service-badge">Remote State</span>
+                    <span class="service-badge">IaC</span>
+                    <span class="service-badge">Drift Detection</span>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <!-- end category 2 -->
+
+
+          <!-- ──────────────────────────────────────
+               CATEGORY 3 · Monitoring & Observability
+          ─────────────────────────────────────── -->
+          <div class="service-category">
+            <div class="service-category-header">
+              <div class="service-category-icon">
+                <ion-icon name="pulse-outline"></ion-icon>
               </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Monitoring & Observability</h4>
-                <p class="service-item-text">
-                  Implementing application monitoring with <strong>Spring Boot Actuator</strong>,
-                  centralized logging, metrics collection, and health checks for production readiness.
-                </p>
+              <div class="service-category-label">
+                <span class="service-category-title">Monitoring &amp; Observability</span>
+                <span class="service-category-subtitle">Metrics, dashboards, logs &amp; distributed tracing</span>
               </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+
+            <ul class="service-list">
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="bar-chart-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Prometheus &amp; Grafana</h4>
+                  <p class="service-item-text">
+                    Instrumenting Spring Boot applications with <strong>Micrometer</strong> to expose metrics,
+                    scraping them with <strong>Prometheus</strong>, and building rich real-time dashboards in
+                    <strong>Grafana</strong>. Tracking JVM heap, GC activity, HTTP request rate, error rates,
+                    and custom business metrics. Configuring <strong>Grafana Alerts</strong> to notify via
+                    Slack or email when thresholds are breached.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Prometheus</span>
+                    <span class="service-badge">Grafana</span>
+                    <span class="service-badge">Micrometer</span>
+                    <span class="service-badge">PromQL</span>
+                    <span class="service-badge">Alerting</span>
+                    <span class="service-badge">Dashboards</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="cloud-upload-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Spring Boot Actuator &amp; Health Checks</h4>
+                  <p class="service-item-text">
+                    Enabling production-ready observability with <strong>Spring Boot Actuator</strong> —
+                    exposing /health, /info, /metrics, /env endpoints and securing them appropriately.
+                    Integrating <strong>Micrometer</strong> to bridge application metrics into Prometheus,
+                    Datadog, or CloudWatch. Writing custom health indicators for downstream service and
+                    database readiness checks.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Spring Boot Actuator</span>
+                    <span class="service-badge">Health Indicators</span>
+                    <span class="service-badge">Micrometer</span>
+                    <span class="service-badge">Custom Metrics</span>
+                    <span class="service-badge">Liveness / Readiness</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="search-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Centralized Logging — ELK Stack</h4>
+                  <p class="service-item-text">
+                    Setting up structured, searchable log pipelines with the <strong>ELK Stack</strong> —
+                    shipping logs via <strong>Logstash</strong> or Filebeat, indexing them in
+                    <strong>Elasticsearch</strong>, and visualising / querying them in <strong>Kibana</strong>.
+                    Applying JSON log formatting with Logback to enable field-level filtering, error pattern
+                    detection, and audit trail queries.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Elasticsearch</span>
+                    <span class="service-badge">Logstash</span>
+                    <span class="service-badge">Kibana</span>
+                    <span class="service-badge">Filebeat</span>
+                    <span class="service-badge">Logback</span>
+                    <span class="service-badge">Structured Logging</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="git-merge-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Distributed Tracing — Zipkin &amp; Jaeger</h4>
+                  <p class="service-item-text">
+                    Achieving end-to-end request visibility across microservices with
+                    <strong>Spring Cloud Sleuth</strong> for automatic trace/span injection and
+                    <strong>Zipkin</strong> or <strong>Jaeger</strong> as the tracing backend. Identifying
+                    latency hotspots, tracing slow DB queries, and correlating logs with trace IDs for
+                    faster root-cause analysis in distributed environments.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Zipkin</span>
+                    <span class="service-badge">Jaeger</span>
+                    <span class="service-badge">Spring Cloud Sleuth</span>
+                    <span class="service-badge">Trace / Span</span>
+                    <span class="service-badge">Latency Analysis</span>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <!-- end category 3 -->
+
+
+          <!-- ──────────────────────────────────────
+               CATEGORY 4 · System Design
+          ─────────────────────────────────────── -->
+          <div class="service-category">
+            <div class="service-category-header">
+              <div class="service-category-icon">
+                <ion-icon name="easel-outline"></ion-icon>
               </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">API Documentation</h4>
-                <p class="service-item-text">
-                  Generating comprehensive API documentation using <strong>Swagger/OpenAPI</strong>,
-                  maintaining API contracts, and ensuring clear communication between services.
-                </p>
+              <div class="service-category-label">
+                <span class="service-category-title">System Design</span>
+                <span class="service-category-subtitle">LLD, HLD &amp; scalable architecture patterns</span>
               </div>
-            </li>
-          </ul>
+            </div>
+
+            <ul class="service-list">
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="albums-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Low-Level Design (LLD)</h4>
+                  <p class="service-item-text">
+                    Applying <strong>SOLID principles</strong> and classic <strong>Gang-of-Four Design Patterns</strong>
+                    — Creational (Factory, Builder, Singleton), Structural (Adapter, Decorator, Proxy), and
+                    Behavioural (Strategy, Observer, Command) — to craft clean, extensible class designs.
+                    Producing UML class diagrams, defining interface contracts, and translating requirements
+                    into well-structured, maintainable code modules.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">SOLID</span>
+                    <span class="service-badge">Design Patterns</span>
+                    <span class="service-badge">Factory</span>
+                    <span class="service-badge">Strategy</span>
+                    <span class="service-badge">Observer</span>
+                    <span class="service-badge">Builder</span>
+                    <span class="service-badge">UML</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="globe-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">High-Level Design (HLD)</h4>
+                  <p class="service-item-text">
+                    Architecting scalable, fault-tolerant distributed systems — reasoning through
+                    <strong>CAP theorem</strong> trade-offs, horizontal vs vertical scaling, choosing the right
+                    databases (SQL vs NoSQL), caches, CDNs, and message queues. Designing real-world system
+                    blueprints such as URL shorteners, ride-sharing backends, social media feeds, and
+                    notification systems with load balancers, sharding, and replication strategies.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">CAP Theorem</span>
+                    <span class="service-badge">Scalability</span>
+                    <span class="service-badge">Load Balancing</span>
+                    <span class="service-badge">Sharding</span>
+                    <span class="service-badge">Replication</span>
+                    <span class="service-badge">CDN</span>
+                    <span class="service-badge">SQL vs NoSQL</span>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <!-- end category 4 -->
+
+
+          <!-- ──────────────────────────────────────
+               CATEGORY 5 · Agile & Soft Skills
+          ─────────────────────────────────────── -->
+          <div class="service-category">
+            <div class="service-category-header">
+              <div class="service-category-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <div class="service-category-label">
+                <span class="service-category-title">Agile &amp; Soft Skills</span>
+                <span class="service-category-subtitle">Team collaboration, process &amp; communication</span>
+              </div>
+            </div>
+
+            <ul class="service-list">
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="refresh-circle-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Agile &amp; Scrum</h4>
+                  <p class="service-item-text">
+                    Working effectively within <strong>Agile / Scrum</strong> teams — participating in sprint
+                    planning, daily stand-ups, sprint reviews, and retrospectives. Managing backlog items,
+                    writing and refining user stories with acceptance criteria, and tracking velocity. Comfortable
+                    with <strong>Jira</strong> for issue tracking and <strong>Confluence</strong> for team
+                    knowledge management and sprint documentation.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Scrum</span>
+                    <span class="service-badge">Agile</span>
+                    <span class="service-badge">Jira</span>
+                    <span class="service-badge">Confluence</span>
+                    <span class="service-badge">Sprint Planning</span>
+                    <span class="service-badge">Retrospectives</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Code Reviews &amp; Team Collaboration</h4>
+                  <p class="service-item-text">
+                    Fostering a healthy engineering culture through thorough, constructive
+                    <strong>code reviews</strong> — checking for correctness, clean code, security issues,
+                    and test coverage. Writing clear technical documentation and ADRs (Architecture Decision
+                    Records). Experienced in async-first collaboration via <strong>GitHub PRs</strong>,
+                    Slack, and Notion to keep distributed teams aligned.
+                  </p>
+                  <div class="service-badges">
+                    <span class="service-badge">Code Review</span>
+                    <span class="service-badge">GitHub PRs</span>
+                    <span class="service-badge">ADR</span>
+                    <span class="service-badge">Documentation</span>
+                    <span class="service-badge">Async Collaboration</span>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <!-- end category 5 -->
+
         </section>
+        <!-- end #service -->
+
       </article>
+      <!-- end #about -->
+
 
       <!-- #SKILL -->
       <article class="skills" data-page="skills">
@@ -296,13 +876,14 @@
         </header>
         <section class="skills-content">
           <div class="skills-category">
-            <h3 class="h3 skills-title">Language & Technology</h3>
+            <h3 class="h3 skills-title">Language &amp; Technology</h3>
             <div class="skills-tags">
               <span class="skill-tag">Java</span>
               <span class="skill-tag">Spring Boot</span>
               <span class="skill-tag">Microservices</span>
               <span class="skill-tag">RESTful Web Service</span>
               <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
               <span class="skill-tag">RabbitMQ</span>
               <span class="skill-tag">ActiveMQ</span>
               <span class="skill-tag">Kafka</span>
@@ -314,9 +895,29 @@
             </div>
           </div>
           <div class="skills-category">
-            <h3 class="h3 skills-title">Tools & IDE</h3>
+            <h3 class="h3 skills-title">DevOps &amp; Cloud</h3>
             <div class="skills-tags">
-              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">AWS (EC2, ECS, RDS, S3)</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">GitHub Actions</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="h3 skills-title">Monitoring &amp; Observability</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Prometheus</span>
+              <span class="skill-tag">Grafana</span>
+              <span class="skill-tag">ELK Stack</span>
+              <span class="skill-tag">Zipkin</span>
+              <span class="skill-tag">Spring Boot Actuator</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="h3 skills-title">Tools &amp; IDE</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Git &amp; GitHub</span>
               <span class="skill-tag">Maven</span>
               <span class="skill-tag">Swagger</span>
               <span class="skill-tag">IntelliJ IDEA</span>
@@ -329,12 +930,15 @@
               <span class="skill-tag">Team Collaboration</span>
               <span class="skill-tag">Agile Methodology</span>
               <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Code Reviews</span>
+              <span class="skill-tag">System Design</span>
             </div>
           </div>
         </section>
       </article>
 
-      <!-- #EXPRIENCE -->
+
+      <!-- #EXPERIENCE -->
       <article class="experience" data-page="experience">
         <header>
           <h2 class="h2 article-title">Experience</h2>
@@ -399,6 +1003,7 @@
         </section>
       </article>
 
+
       <!-- #EDUCATION -->
       <article class="education" data-page="education">
         <header>
@@ -415,8 +1020,19 @@
             <div class="education-list">
               <div class="education-item">
                 <div class="education-header">
-                  <h4 class="h4 education-degree">Bachelor of Science in Computer Applications & Information
-                    Technology(BSc(CA&IT))</h4>
+                  <h4 class="h4 education-degree">Master of Science in Information Technology (MSc IT)</h4>
+                  <span class="education-year">2025 - 2027</span>
+                </div>
+                <div class="education-institution">
+                  <span class="institution-name">Gokul Global University,</span>
+                  <span class="education-location">Siddhpur, Gujarat, India</span>
+                </div>
+              </div>
+
+              <div class="education-item">
+                <div class="education-header">
+                  <h4 class="h4 education-degree">Bachelor of Science in Computer Applications &amp; Information
+                    Technology (BSc CA&amp;IT)</h4>
                   <span class="education-year">2022 - 2025</span>
                 </div>
                 <div class="education-institution">
@@ -426,8 +1042,7 @@
               </div>
               <div class="education-item">
                 <div class="education-header">
-                  <h4 class="h4 education-degree">Higher Secondary School (12th Commerce)
-                  </h4>
+                  <h4 class="h4 education-degree">Higher Secondary School (12th Commerce)</h4>
                   <span class="education-year">2020 - 2022</span>
                 </div>
                 <div class="education-institution">
@@ -472,22 +1087,26 @@
         </section>
       </article>
 
+
       <!-- #RESUME -->
       <article class="resume" data-page="resume">
         <header>
           <h2 class="h2 article-title">Resume</h2>
           <div class="resume-viewer">
-            <a href="assets/PDF/MohammadMarediyaResume.pdf" target="_blank" rel="noopener noreferrer" class="view-btn">
+            <a href="assets/PDF/Mohammad_Marediya_java_developer_resume.pdf" target="_blank" rel="noopener noreferrer"
+              class="view-btn">
               <ion-icon name="eye-outline"></ion-icon>
               View Resume
             </a>
-            <a href="assets/PDF/MohammadMarediyaResume.pdf" class="download-btn" download="MohammadMarediyaResume.pdf">
+            <a href="assets/PDF/Mohammad_Marediya_java_developer_resume.pdf" class="download-btn"
+              download="MohammadMarediyaResume.pdf">
               <ion-icon name="download-outline"></ion-icon>
               Download PDF
             </a>
           </div>
         </header>
       </article>
+
 
       <!-- #PORTFOLIO -->
       <article class="portfolio" data-page="portfolio">
@@ -560,7 +1179,7 @@
                     <div class="detail-section">
                       <h4 class="detail-title">Key Features</h4>
                       <ul class="feature-list">
-                        <li>User authentication & authorization with JWT</li>
+                        <li>User authentication &amp; authorization with JWT</li>
                         <li>CRUD operations for posts, comments, and likes</li>
                         <li>File upload and storage system</li>
                         <li>Real-time notifications using WebSocket</li>
@@ -570,7 +1189,7 @@
                       </ul>
                     </div>
                     <div class="detail-section">
-                      <h4 class="detail-title">My Role & Contributions</h4>
+                      <h4 class="detail-title">My Role &amp; Contributions</h4>
                       <p class="detail-text">Full-stack backend development including database design, REST API
                         development, security implementation, performance optimization, and deployment configuration.
                       </p>
@@ -593,6 +1212,7 @@
                 </div>
               </div>
             </li>
+
             <li class="project-item active">
               <div class="project-card">
                 <figure class="project-img">
@@ -644,7 +1264,7 @@
                       </ul>
                     </div>
                     <div class="detail-section">
-                      <h4 class="detail-title">My Role & Contributions</h4>
+                      <h4 class="detail-title">My Role &amp; Contributions</h4>
                       <p class="detail-text">Backend architecture design, database schema creation, REST API
                         development, documentation, and implementation of search and filtering functionalities.</p>
                     </div>
@@ -666,6 +1286,7 @@
                 </div>
               </div>
             </li>
+
             <li class="project-item active">
               <div class="project-card">
                 <figure class="project-img">
@@ -717,7 +1338,7 @@
                       </ul>
                     </div>
                     <div class="detail-section">
-                      <h4 class="detail-title">My Role & Contributions</h4>
+                      <h4 class="detail-title">My Role &amp; Contributions</h4>
                       <p class="detail-text">Full-stack development including backend API design, frontend React
                         components, database management, user authentication, and deployment.</p>
                     </div>
@@ -742,6 +1363,7 @@
           </ul>
         </section>
       </article>
+
 
       <!-- #CONTACT -->
       <article class="contact" data-page="contact">
@@ -835,6 +1457,7 @@
           </ul>
         </section>
       </article>
+
     </div>
   </main>
 
